@@ -1,0 +1,6 @@
+{
+    "preset": "node-style-guide", //airbnb
+    "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
+    "requireCapitalizedComments": false,
+    "requireCurlyBraces": null // false
+}

@@ -1,0 +1,28 @@
+{
+  "name": "hotdealbot",
+  "version": "1.0.0",
+  "description": "hotdeal bot for [slack](https://slack.com).",
+  "main": "clien.js",
+  "dependencies": {
+    "@slack/client": "^3.6.1",
+    "bunyan": "^1.8.5",
+    "cheerio": "^0.22.0",
+    "node-schedule": "^1.2.0",
+    "request": "^2.79.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nadir93/hotdealbot.git"
+  },
+  "author": "@nadir93",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nadir93/hotdealbot/issues"
+  },
+  "homepage": "https://github.com/nadir93/hotdealbot#readme"
+}
