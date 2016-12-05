@@ -17,7 +17,7 @@ var log = new Logger.createLogger({
 var hotdeals;
 var keywords;
 var filePath = process.cwd();
-log.debug('filePath = '+filePath);
+log.debug('filePath = ' + filePath);
 
 init()
   .then(() =>
