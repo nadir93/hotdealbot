@@ -4,6 +4,8 @@
 var util = require('util');
 var clien = require('./lib/clienLib');
 var schedule = require('node-schedule');
+var _ = require('underscore');
+var fs = require('fs');
 
 var loglevel = 'debug';
 var Logger = require('bunyan');
@@ -14,6 +16,8 @@ var log = new Logger.createLogger({
 
 var hotdeals;
 var keywords;
+var filePath = process.cwd();
+log.debug('filePath = '+filePath);
 
 init()
   .then(() =>
@@ -27,12 +31,12 @@ init()
  */
 function init() {
   return new Promise((resolve, reject) => {
-    clien.getHotdeals(__dirname + '/hotdeals')
+    clien.getHotdeals(filePath + '/hotdeals')
       .then((data) => {
         // log.debug('hotdeals = ' + data);
         hotdeals = JSON.parse(data);
         log.debug('기존 핫딜 = ' + util.inspect(hotdeals));
-        return clien.getKeywords(__dirname + '/keywords');
+        return clien.getKeywords(filePath + '/keywords');
       })
       .then((data) => {
         // log.debug('keywordsData = ' + data);
@@ -67,7 +71,7 @@ module.exports = function(robot) {
       if (removedKey) {
         keywords.splice(arg[2], 1);
         // 파일에저장한다.
-        fs.writeFileSync(context + 'keywords', JSON.stringify(keywords));
+        fs.writeFileSync(filePath + '/keywords', JSON.stringify(keywords));
         log.debug('핫딜 키워드 저장정보 = ' + util.inspect(keywords));
         sendText = '`' + removedKey + '` 키워드가 제거되었습니다';
       } else {
@@ -118,7 +122,7 @@ module.exports = function(robot) {
 
         keywords.push(arg[2]);
         // 파일에저장한다.
-        fs.writeFileSync(context + 'keywords', JSON.stringify(keywords));
+        fs.writeFileSync(filePath + '/keywords', JSON.stringify(keywords));
         log.debug('핫딜 키워드 저장정보 = ' + util.inspect(keywords));
 
         var sendMsg = '';
