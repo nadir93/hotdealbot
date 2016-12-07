@@ -39,8 +39,12 @@ redis.on('end', function() {
 /**
  * 주기적으로 핫딜 체크
  */
-schedule.scheduleJob('*/1 * * * *',
-  () => clien.checkHotdeals()
+schedule.scheduleJob('*/1 * * * *', () => {
+    clien.scrape()
+      .then((data) => clien.push(data))
+      .then(() => log.debug('작업 수행 완료'))
+      .catch((e) => log.error('에러발생 = ' + e));
+  }
 );
 
 /**
