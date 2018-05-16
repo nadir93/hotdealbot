@@ -1,28 +1,39 @@
 {
   "name": "hotdealbot",
-  "version": "1.0.0",
-  "description": "hotdeal bot for [slack](https://slack.com).",
-  "main": "clien.js",
+  "version": "0.0.0",
+  "private": true,
+  "author": "nadir93 <nadir93@gmail.com>",
+  "description": "A simple helpful robot for your Company",
   "dependencies": {
     "@slack/client": "^3.6.1",
     "bunyan": "^1.8.5",
     "cheerio": "^0.22.0",
+    "hubot": "^2.19.0",
+    "hubot-diagnostics": "0.0.1",
+    "hubot-google-images": "^0.2.6",
+    "hubot-google-translate": "^0.2.0",
+    "hubot-help": "^0.2.0",
+    "hubot-heroku-keepalive": "^1.0.2",
+    "hubot-maps": "0.0.2",
+    "hubot-pugme": "^0.1.0",
+    "hubot-redis-brain": "0.0.3",
+    "hubot-rules": "^0.1.1",
+    "hubot-scripts": "^2.17.2",
+    "hubot-shipit": "^0.2.0",
+    "hubot-slack": "^4.2.2",
+    "moment": "^2.17.1",
+    "newrelic": "^1.34.0",
     "node-schedule": "^1.2.0",
+    "redis": "^2.6.3",
     "request": "^2.79.0",
+    "request-promise-native": "^1.0.5",
     "underscore": "^1.8.3"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "engines": {
+    "node": "8.9.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nadir93/hotdealbot.git"
-  },
-  "author": "@nadir93",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nadir93/hotdealbot/issues"
-  },
-  "homepage": "https://github.com/nadir93/hotdealbot#readme"
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
+  }
 }
