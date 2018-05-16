@@ -8,6 +8,7 @@
     "@slack/client": "^3.6.1",
     "bunyan": "^1.8.5",
     "cheerio": "^0.22.0",
+    "eslint": "^4.19.1",
     "hubot": "^2.19.0",
     "hubot-diagnostics": "0.0.1",
     "hubot-google-images": "^0.2.6",
@@ -34,6 +35,6 @@
   },
   "devDependencies": {
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0"
+    "eslint-plugin-import": "^2.11.0"
   }
 }
